@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" ptype="MICROSERVICE" ppkg="ir.co.sadad" epkg="domain" v="5.2" rws="_1542569509116123" Pws="_1542569509116123" cws="_1542569509116123" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_1542569509116122" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="MajorPK" abs="false" class="Major" v="true" jbn="false" xre="false" m="false" rootElement="_1542569509116122" id="_1542569576403124">
+        <jpa:ath>ammac</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" id="_1542573148131180">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1542570155469136" v="true" xvt="" name="course_Majors" id="_1542570502710153">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_1542569576404125">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Major.findAll">
+            <jpa:query>Select e from Major e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Major.findByName">
+            <jpa:query>Select m from Major m where m.name=:name</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CoursePK" abs="false" class="Course" v="true" jbn="false" xre="false" m="false" rootElement="_1542569509116122" id="_1542569579402127">
+        <jpa:ath>ammac</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="name" id="_1542573129408178">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1542570155469136" v="true" xvt="" name="course_Majors" id="_1542570507270155">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_1542569579403128">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Course.findAll">
+            <jpa:query>Select e from Course e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Course.findByName">
+            <jpa:query>Select c from Course c where c.name=:name</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Course.findByUnit">
+            <jpa:query>Select c from Course c where c.unit=:unit</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TermPK" abs="false" class="Term" v="true" jbn="false" xre="false" m="false" rootElement="_1542569509116122" id="_1542569606474130">
+        <jpa:ath>ammac</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1542571682311158" v="true" xvt="" name="term_Course_Majors" id="_1542572887186170">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_1542569606474131">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Term.findAll">
+            <jpa:query>Select e from Term e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity lbl-ref="_1542571926254161" compositePrimaryKeyClass="Course_MajorPK" abs="false" class="Course_Major" v="true" jbn="false" xre="false" m="false" rootElement="_1542569509116122" id="_1542570155469136">
+        <jpa:ath>ammac</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="Integer" v="true" xvt="" name="factor" ft="false" id="_1542571926254161">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:bv>
+                    <jpa:nn m="Must have factor!!"/>
+                </jpa:bv>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="teacherId" id="_1542575121676208">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1542571682311158" v="true" xvt="" name="term_Course_Majors" id="_1542572933990174">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_1542570155470137">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Course_Major.findAll">
+            <jpa:query>Select e from Course_Major e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Course_Major.findByFactor">
+            <jpa:query>Select c from Course_Major c where c.factor=:factor</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Course_Major.findByTeacherId">
+            <jpa:query>Select c from Course_Major c where c.teacherId=:teacherId</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity lbl-ref="_1542572150386162" compositePrimaryKeyClass="Term_Course_MajorPK" abs="false" class="Term_Course_Major" v="true" jbn="false" xre="false" m="false" rootElement="_1542569509116122" id="_1542571682311158">
+        <jpa:ath>ammac</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic optional="false" attribute-type="Integer" v="true" xvt="" name="capacity" ft="false" id="_1542572150386162">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:bv>
+                    <jpa:nu/>
+                </jpa:bv>
+                <jpa:column unique="false" nullable="false" insertable="true" updatable="true" precision="0"/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_1542575543705226" v="true" xvt="" name="student_Course_Assignments" id="_1542576762537237">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_1542571682312159">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Term_Course_Major.findAll">
+            <jpa:query>Select e from Term_Course_Major e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Term_Course_Major.findByCapacity">
+            <jpa:query>Select t from Term_Course_Major t where t.capacity=:capacity</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity lbl-ref="_1542576612153235" compositePrimaryKeyClass="Student_Course_AssignmentPK" abs="false" class="Student_Course_Assignment" v="true" jbn="false" xre="false" m="false" rootElement="_1542569509116122" id="_1542575543705226">
+        <jpa:ath>ammac</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="studentId" id="_1542576612153235">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_1542575543707227">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Student_Course_Assignment.findAll">
+            <jpa:query>Select e from Student_Course_Assignment e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Student_Course_Assignment.findByStudentId">
+            <jpa:query>Select s from Student_Course_Assignment s where s.studentId=:studentId</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Map</ct>
+        <ct>java.util.Collection</ct>
+        <cit>java.util.ArrayList</cit>
+        <cit>java.util.LinkedList</cit>
+        <cit>java.util.HashSet</cit>
+        <cit>java.util.TreeSet</cit>
+        <cit>java.util.HashMap</cit>
+    </jpa:c>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_1542569509116123">
+            <i ref="_1542571682311158" x="100" y="435"/>
+            <i ref="_1542570155469136" x="181" y="238"/>
+            <i ref="_1542569576403124" x="446" y="111"/>
+            <i ref="_1542569579402127" x="79" y="44"/>
+            <i ref="_1542569606474130" x="446" y="523"/>
+            <i ref="_1542575543705226" x="-167" y="255"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
